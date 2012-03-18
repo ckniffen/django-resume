@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	    <title>{% block page-title %}TODO{% endblock page-title %} - KniffenWebDesign</title>
+		<!-- Extra Head Statements -->
+		{% block extra-head %}{% endblock %}
+	</head>
+	<body>
+		<div id="faux-body">
+			<header>
+				<div class="website-name">Clowning Around</div>
+			</header>
+			<div id="page">
+				{% block content %}{% endblock content %}
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+</html>

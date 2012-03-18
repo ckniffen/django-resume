@@ -1,0 +1,121 @@
+/* Resume */
+
+.comma-separated li:after {
+	content: ', ';
+}
+
+.comma-separated li.last:after {
+	content: none;
+}
+
+#resume {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.resume-section-content li {
+	padding: 0px;
+	list-style-type: none;
+}
+
+.resume-section-content {
+	margin-top: 1em;
+	clear: both;	
+}
+
+.resume-section-content h2 {
+	font-size: 16px;
+	margin-bottom: .25em;
+}
+
+.resume-section-content h3 {
+	font-size: 13px;
+}
+
+.summary p {
+	margin: .25em 0 1em 0;
+}
+
+.skills h3 {
+	float: left;
+	clear: left;
+	padding-right: 10px;
+	width: 170px;
+}
+
+.skill-category {
+	clear:both;
+}
+
+.skills ul {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}
+
+.skills li {
+	display: inline;
+	padding: 0px;
+}
+
+
+
+.experiences {
+	margin: 0px;
+	padding: 0px;
+}
+
+.experience {
+    margin-top: 12px;
+}
+
+.experiences h4 {
+	display: inline;
+}
+
+.experience-dates,
+.experience-job-title {
+	float: left;
+	width: 240px;
+	margin-bottom: .5em;
+}
+
+.experience-tasks {
+	clear: both;
+	padding: 0px;
+	margin-bottom: .3em;	
+}
+
+.experience-tasks li{
+	padding-left: 10px;
+	list-style-type: disc;
+}
+
+.environment ul,
+.environment li {
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+}
+
+.environment ul {
+	padding-left: 5px;
+}
+
+.education-list {
+	margin: 0px;
+	padding-left: 0px;
+}
+
+.education-degree,
+.education-graduation {
+	float: left;
+	width: 240px;
+	margin-bottom: .3em;
+}
+
+.education-major,
+.education-minor {
+	clear: both;
+	margin-bottom: .3em;
+}

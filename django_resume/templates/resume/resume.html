@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load django_resume_tags %}
+
+{% block page-title %}Resume{% endblock page-title %}
+
+{% block extra-head %}
+	<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}css/resume.css" />
+{% endblock extra-head %}
+
+{% block content %}
+<div id="resume">
+	<h1>Resume</h1>
+	
+	<!-- Summary -->
+	<div class="resume-section-content summary clearfix">
+		<h2>{{ other_info.summary.title }}</h2>
+		<p>{{ other_info.summary.content }}</p>
+	</div>
+	
+	<!-- Skills -->
+	<div class="resume-section-content clearfix">
+		<h2>Skills</h2>
+		<div class="skills">
+			{% for skill_category in skill_category_list %}
+				<div class="skill-category clearfix">
+					<h3>{{ skill_category.name }}</h3>
+					<ul class="comma-separated">
+						{{ skill_category.skills_in_skill_list|html_list }}
+					</ul>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+	<!-- Work Experience -->
+	<div class="resume-section-content clearfix">
+		<h2>Work Experience</h2>
+		<ul class="experiences">
+			{% for work_experience in experience_list %}
+				<li class="experience">
+					<h3 class="experience-company">{{ work_experience.company }}</h3>
+					<div class="experience-dates">{{ work_experience.dates }}</div>
+					<div class="experience-job-title">{{ work_experience.job_title }}</div>
+					<ul class="experience-tasks">
+						{{ work_experience.tasks.all|unordered_list }}
+					</ul>
+					<div class="environment">
+						<h4>Environment:</h4>
+						<ul class="comma-separated">
+							{{ work_experience.skills_ordered|html_list }}							
+						</ul>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<!-- Education -->
+	<div class="resume-section-content clearfix">
+		<h2>Education</h2>
+		<ul class="education-list">
+			{% for education in education_list %}
+				<li>
+					<h3>{{ education.school_name }}</h3>
+					<div class="education-degree">{{ education.degree }}</div>
+					<div class="education-graduation">{{ education.graduation }}</div>
+					{% if education.major %}
+						<div class="education-major">
+							<strong>Major: </strong> {{ education.major }}
+						</div>
+					{% endif %}
+					{% if education.minor %}
+						<div class="education-minor">
+							<strong>Minor: </strong> {{ education.minor }}
+						</div>
+					{% endif %}
+					{% if education.involvement %}
+						<div class="education-involvement">
+							<strong>Involvement: </strong>{{ education.involvement }}
+						</div>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock content %}
